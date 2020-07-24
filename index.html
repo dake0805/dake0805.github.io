@@ -1,21 +1,56 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-<head>
-    <meta charset="utf-8">
-    <title>zy</title>
-</head>
+{% if site.posts.size == 0 %}
+  <h2>No post found</h2>
+{% endif %}
 
+<div class="posts">
+  {% for post in paginator.posts %}
+    <article class="post">
+      <h1>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </h1>
 
-<body>
-    <h2>
-        <p style="font-family: serif;"> 希臘神話有一個故事，講述西西弗斯受到諸神嘅懲罰，要喺地獄不斷推一塊巨石上山；<br><br>
-            上到山頂，巨石又會自動碌返落山腳，佢每日都要重複呢種徒勞無功嘅工作，直到永恆。<br><br>
-            後人有一個講法，話諸神並唔係用「推石頭」嚟懲罰西西弗斯，而係用觀念，用「我永世都要推石頭實在太慘」嘅呢個觀念。<br><br>
-            西西弗斯知道自己改變唔到命運，佢唯一可以做嘅，就係繼續推石頭。<br><br>
-            直到有一日，佢發現佢可以蔑視自己嘅命運，甚至用享受呢個過程嚟去否定諸神對佢嘅懲罰，於是，佢感覺到自己係快樂嘅。<br><br></p>
+      <div>
+        <span class="date">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </span>
 
-    </h2>
-</body>
+        <ul class="tag">
+          {% for tag in post.tags %}
+          <li>
+            <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+              {{ tag }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-</html>
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <span class="prev">
+      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="prev">
+        &#xE000; Previous
+      </a>
+    </span>
+  {% endif %}
+  {% if paginator.next_page %}
+    <span class="next">
+      <a href="{{ site.baseurl}}{{ paginator.next_page_path }}" class="next">
+        Next &#xE001;
+      </a>
+    </span>
+  {% endif %}
+</div>
