@@ -5,7 +5,7 @@ layout: default
 <article class="post">
   <h1>{{ page.title }}</h1>
 
-  <div>
+  <div clsss="meta">
     <span class="date">
       {{ page.date | date: "%Y-%m-%d" }}
     </span>
@@ -13,7 +13,7 @@ layout: default
     <ul class="tag">
       {% for tag in page.tags %}
       <li>
-        <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+        <a href="{{ site.baseurl }}/tags.html#{{ tag }}">
           {{ tag }}
         </a>
       </li>
@@ -25,22 +25,25 @@ layout: default
     {{ content }}
   </div>
 
+  <hr style="border-top:0.5px solid #28323C;"/>
+
+  <script> pangu.spacingPage(); </script>
+
   <div class="pagination">
     {% if page.previous.url %}
       <span class="prev" >
-          <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-            &#xE000; {{ page.previous.title }}
+          <a href="{{ site.baseurl }}{{ page.previous.url }}">
+            上一篇：{{ page.previous.title }}
           </a>
       </span>
     {% endif %}
     {% if page.next.url %}
       <span class="next" >
-          <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-            {{ page.next.title }} &#xE001;
+          <a href="{{ site.baseurl }}{{ page.next.url }}">
+            下一篇：{{ page.next.title }}
           </a>
       </span>
     {% endif %}
   </div>
 
-  {% include disqus.html %}
 </article>

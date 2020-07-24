@@ -3,16 +3,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt| strip_html }}" />
-    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    {% if page.image_feature %}
+    <meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:image" content= "{{ page.image_feature }}">
     {% else %}
-    <meta name="description" content="{{ site.description }}">
-    <meta property="og:description" content="{{ site.description }}" />
-    {% endif %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/404.jpg" />
+		{% endif %}
+
+    <meta name="twitter:domain" content="{{ site.url }}">
+
     <meta name="author" content="{{ site.name }}" />
 
     {% if page.title %}
-    <meta property="og:title" content="{{ page.title }}" />
     <meta property="twitter:title" content="{{ page.title }}" />
     {% endif %}
+
+    {% seo title=false %}
