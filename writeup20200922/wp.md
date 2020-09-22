@@ -1,4 +1,7 @@
-# 题解
+---
+layout: post
+title:  "题解"
+---
 
 zoe
 
